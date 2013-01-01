@@ -31,11 +31,9 @@ This gem fetches data from two independent sources, which has several implicatio
     profile = Gamertag::SimpleProfile.new('Belial1984')
 
     profile.gamertag
-    profile.profile_link
-    profile.account_status
-    profile.gender
-    profile.is_cheater
-    profile.online
+    profile.isvalid
+    profile.ischeater
+    profile.isonline
     profile.online_status
     profile.reputation
     profile.gamerscore
@@ -43,9 +41,15 @@ This gem fetches data from two independent sources, which has several implicatio
     profile.motto
     profile.name
     profile.bio
-    profile.avatars.small_gamerpic
-    profile.avatars.large_gamerpic
-    profile.avatars.body_gamerpic
+    profile.avatarbody
+    profile.avatarbodyssl
+    profile.avatarlarge
+    profile.avatarlargessl
+    profile.avatarsmall
+    profile.avatarsmallssl
+    profile.avatartile
+    profile.avatartilessl
+
     profile.recent_games.each do |game|
       game.title
       game.tid # Probably some arbitrary title id

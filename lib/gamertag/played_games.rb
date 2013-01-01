@@ -1,7 +1,7 @@
 require 'cgi'
 module Gamertag
   class PlayedGames
-    # Create a new instacne of +PlayedGames+ with a given gamertag. You will
+    # Create a new instance of +PlayedGames+ with a given gamertag. You will
     # then be able to iterate over the items returned from xboxgamertag.com
     # using iterator methods such as +first+, +last+, +each+, +count+, and
     # +to_hash+.
