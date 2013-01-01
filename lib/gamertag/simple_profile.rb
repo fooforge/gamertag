@@ -59,10 +59,15 @@ module Gamertag
     #
     # @return Hash of profile information from xboxleaders.com.
     def fetch(gamertag)
-      uri = URI.parse("http://api.xboxleaders.com/v2/?gamertag=#{CGI.escape gamertag}&format=json")
+      uri = URI.parse("http://www.xboxleaders.com/api/profile/#{CGI.escape gamertag}.json")
       response = Net::HTTP.get_response(uri)
       hash = JSON.parse(response.body)
-      hash['user']
+
+      hash['Data'].keys.each do |key|
+        hash['Data'][key.downcase] = hash['Data'][key]
+        hash['Data'].delete(key)
+      end
+      hash['Data']
     end
   end
 end
